@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
     List<Member> findByNameContainingIgnoreCase(String name);
-    List<Member> findByPhone(String phone);
-    List<Member> findByDuration(int duration);
+    List<Member> findByPhoneNumber(String phoneNumber);
+    List<Member> findByMembershipTypeIgnoreCase(String membershipType);
+    List<Member> findByStartDate(String startDate);
 }
