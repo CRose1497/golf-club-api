@@ -48,7 +48,7 @@ public class MemberController {
     // Search by phone
     @GetMapping("/search/by-phone")
     public List<Member> searchByPhone(@RequestParam String phone) {
-        return memberRepository.findByPhoneNumber(phone);
+        return memberRepository.findByPhone(phone);  // ✅ FIXED
     }
 
     // Search by membership start date
@@ -56,4 +56,11 @@ public class MemberController {
     public List<Member> searchByStartDate(@RequestParam String date) {
         return memberRepository.findByStartDate(date);
     }
+
+    @GetMapping("/test")
+public String testApi() {
+    return "API is alive!";
 }
+
+}
+

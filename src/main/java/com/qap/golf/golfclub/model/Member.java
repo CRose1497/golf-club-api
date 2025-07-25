@@ -16,16 +16,18 @@ public class Member {
     private String phone;
     private LocalDate startDate;
     private int duration;
+    private String membershipType;
 
     public Member() {}
 
-    public Member(String name, String address, String email, String phone, LocalDate startDate, int duration) {
+    public Member(String name, String address, String email, String phone, LocalDate startDate, int duration, String membershipType) {
         this.name = name;
         this.address = address;
         this.email = email;
         this.phone = phone;
         this.startDate = startDate;
         this.duration = duration;
+        this.membershipType = membershipType; 
     }
 
     public Long getId() { return id; }
@@ -47,4 +49,7 @@ public class Member {
 
     public int getDuration() { return duration; }
     public void setDuration(int duration) { this.duration = duration; }
+
+    public String getMembershipType() { return membershipType; } 
+    public void setMembershipType(String membershipType) { this.membershipType = membershipType; } 
 }
