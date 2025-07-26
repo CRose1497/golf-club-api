@@ -27,29 +27,59 @@ public class Member {
         this.phone = phone;
         this.startDate = startDate;
         this.duration = duration;
-        this.membershipType = membershipType; 
+        this.membershipType = membershipType;
     }
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public String getPhone() { return phone; }
-    public void setPhone(String phone) { this.phone = phone; }
+    public String getPhoneNumber() {
+        return phone;
+    }
+    public void setPhoneNumber(String phone) {
+        this.phone = phone;
+    }
 
-    public LocalDate getStartDate() { return startDate; }
-    public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
+    public LocalDate getMembershipStartDate() {
+        return startDate;
+    }
+    public void setMembershipStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
 
-    public int getDuration() { return duration; }
-    public void setDuration(int duration) { this.duration = duration; }
+    public int getMembershipDuration() {
+        return duration;
+    }
+    public void setMembershipDuration(int duration) {
+        this.duration = duration;
+    }
 
-    public String getMembershipType() { return membershipType; } 
-    public void setMembershipType(String membershipType) { this.membershipType = membershipType; } 
+    public String getMembershipType() {
+        return membershipType;
+    }
+    public void setMembershipType(String membershipType) {
+        this.membershipType = membershipType;
+    }
 }

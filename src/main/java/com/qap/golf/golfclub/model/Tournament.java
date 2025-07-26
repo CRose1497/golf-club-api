@@ -13,6 +13,7 @@ public class Tournament {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
     private LocalDate startDate;
     private LocalDate endDate;
     private String location;
@@ -24,7 +25,8 @@ public class Tournament {
 
     public Tournament() {}
 
-    public Tournament(LocalDate startDate, LocalDate endDate, String location, BigDecimal entryFee, BigDecimal cashPrize) {
+    public Tournament(String name, LocalDate startDate, LocalDate endDate, String location, BigDecimal entryFee, BigDecimal cashPrize) {
+        this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.location = location;
@@ -32,23 +34,60 @@ public class Tournament {
         this.cashPrize = cashPrize;
     }
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public LocalDate getStartDate() { return startDate; }
-    public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public LocalDate getEndDate() { return endDate; }
-    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
+    public LocalDate getDate() {
+        return startDate;
+    }
 
-    public String getLocation() { return location; }
-    public void setLocation(String location) { this.location = location; }
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
 
-    public BigDecimal getEntryFee() { return entryFee; }
-    public void setEntryFee(BigDecimal entryFee) { this.entryFee = entryFee; }
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
 
-    public BigDecimal getCashPrize() { return cashPrize; }
-    public void setCashPrize(BigDecimal cashPrize) { this.cashPrize = cashPrize; }
+    public String getLocation() {
+        return location;
+    }
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-    public List<Member> getMembers() { return members; }
-    public void setMembers(List<Member> members) { this.members = members; }
+    public BigDecimal getEntryFee() {
+        return entryFee;
+    }
+    public void setEntryFee(BigDecimal entryFee) {
+        this.entryFee = entryFee;
+    }
+
+    public BigDecimal getCashPrize() {
+        return cashPrize;
+    }
+    public void setCashPrize(BigDecimal cashPrize) {
+        this.cashPrize = cashPrize;
+    }
+
+    public List<Member> getMembers() {
+        return members;
+    }
+    public void setMembers(List<Member> members) {
+        this.members = members;
+    }
 }

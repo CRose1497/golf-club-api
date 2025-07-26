@@ -5,6 +5,7 @@ import com.qap.golf.golfclub.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,19 +49,18 @@ public class MemberController {
     // Search by phone
     @GetMapping("/search/by-phone")
     public List<Member> searchByPhone(@RequestParam String phone) {
-        return memberRepository.findByPhone(phone);  // ✅ FIXED
+        return memberRepository.findByPhone(phone);
     }
 
     // Search by membership start date
     @GetMapping("/search/by-start-date")
     public List<Member> searchByStartDate(@RequestParam String date) {
-        return memberRepository.findByStartDate(date);
+        LocalDate parsedDate = LocalDate.parse(date); 
+        return memberRepository.findByStartDate(parsedDate);
     }
 
-    @GetMapping("/test")
-public String testApi() {
-    return "API is alive!";
+    @GetMapping("/test") // Test endpoint to check if the API is alive
+    public String testApi() {
+        return "API is alive!";
+    }
 }
-
-}
-
