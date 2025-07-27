@@ -67,9 +67,10 @@ public class TournamentController {
         return tournamentRepo.findByMembers_Id(memberId);
     }
 
-@GetMapping("/test")
-public String test() {
-    return "Tournament Controller is working!";
-}
+    @GetMapping("/test") // Test endpoint to check if the API is alive
+    @ResponseBody
+    public String test() {
+        return "Tournament Controller is working!";
+    }
 
 }

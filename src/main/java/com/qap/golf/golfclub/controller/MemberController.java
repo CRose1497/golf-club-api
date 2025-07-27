@@ -70,4 +70,6 @@ public class MemberController {
     public String testApi() {
         return "API is alive!";
     }
+
+    
 }
