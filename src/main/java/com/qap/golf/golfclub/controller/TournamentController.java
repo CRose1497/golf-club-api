@@ -21,16 +21,19 @@ public class TournamentController {
     @Autowired
     private MemberRepository memberRepo;
 
+    // Create a new tournament
     @PostMapping
     public Tournament create(@RequestBody Tournament t) {
         return tournamentRepo.save(t);
     }
 
+    // Get all tournaments
     @GetMapping
     public List<Tournament> getAll() {
         return tournamentRepo.findAll();
     }
 
+    // Search tournaments by location or start date
     @GetMapping("/search")
     public List<Tournament> search(
             @RequestParam(required = false) String location,
@@ -42,6 +45,7 @@ public class TournamentController {
         return tournamentRepo.findAll();
     }
 
+    // Add a member to a tournament
     @PostMapping("/{id}/add-member/{memberId}")
     public Tournament addMember(@PathVariable Long id, @PathVariable Long memberId) {
         Tournament t = tournamentRepo.findById(id).orElseThrow();
@@ -49,4 +53,23 @@ public class TournamentController {
         t.getMembers().add(m);
         return tournamentRepo.save(t);
     }
+
+    // Get all members in a tournament
+    @GetMapping("/{id}/members")
+    public List<Member> getMembersInTournament(@PathVariable Long id) {
+        Tournament t = tournamentRepo.findById(id).orElseThrow();
+        return t.getMembers();
+    }
+
+    // Get all tournaments for a specific member
+    @GetMapping("/member/{memberId}")
+    public List<Tournament> getTournamentsForMember(@PathVariable Long memberId) {
+        return tournamentRepo.findByMembers_Id(memberId);
+    }
+
+@GetMapping("/test")
+public String test() {
+    return "Tournament Controller is working!";
+}
+
 }

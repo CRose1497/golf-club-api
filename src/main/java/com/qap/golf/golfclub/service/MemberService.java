@@ -34,7 +34,7 @@ public class MemberService {
             existing.setEmail(updatedMember.getEmail());
             existing.setPhoneNumber(updatedMember.getPhoneNumber());
             existing.setMembershipStartDate(updatedMember.getMembershipStartDate());
-            existing.setMembershipDuration(updatedMember.getMembershipDuration());
+            existing.setDuration(updatedMember.getDuration());
             return memberRepository.save(existing);
         }).orElse(null);
     }

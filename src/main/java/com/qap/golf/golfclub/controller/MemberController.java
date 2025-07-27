@@ -59,6 +59,13 @@ public class MemberController {
         return memberRepository.findByStartDate(parsedDate);
     }
 
+    // Search by duration
+    @GetMapping("/search/by-duration")
+    public List<Member> searchByDuration(@RequestParam int duration) {
+        return memberRepository.findByDuration(duration);
+    }
+
+
     @GetMapping("/test") // Test endpoint to check if the API is alive
     public String testApi() {
         return "API is alive!";

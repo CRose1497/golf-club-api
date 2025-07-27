@@ -55,11 +55,19 @@ public class Member {
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
     public String getPhoneNumber() {
         return phone;
     }
     public void setPhoneNumber(String phone) {
         this.phone = phone;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
     public LocalDate getMembershipStartDate() {
@@ -69,10 +77,10 @@ public class Member {
         this.startDate = startDate;
     }
 
-    public int getMembershipDuration() {
+    public int getDuration() {
         return duration;
     }
-    public void setMembershipDuration(int duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 

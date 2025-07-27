@@ -45,10 +45,6 @@ public class Tournament {
         this.name = name;
     }
 
-    public LocalDate getDate() {
-        return startDate;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
     }
